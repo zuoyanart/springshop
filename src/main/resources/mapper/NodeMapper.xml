@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.NodeMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Node">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nodepath" jdbcType="VARCHAR" property="nodepath" />
+    <result column="link" jdbcType="VARCHAR" property="link" />
+    <result column="weight" jdbcType="INTEGER" property="weight" />
+    <result column="article_type" jdbcType="VARCHAR" property="articleType" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+    <result column="seodes" jdbcType="VARCHAR" property="seodes" />
+    <result column="ishide" jdbcType="INTEGER" property="ishide" />
+    <result column="mgwidth" jdbcType="SMALLINT" property="mgwidth" />
+    <result column="mgheight" jdbcType="SMALLINT" property="mgheight" />
+    <result column="timg" jdbcType="VARCHAR" property="timg" />
+    <result column="brief" jdbcType="LONGVARCHAR" property="brief" />
+  </resultMap>
+</mapper>
