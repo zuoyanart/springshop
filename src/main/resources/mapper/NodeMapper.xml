@@ -20,4 +20,5 @@
     <result column="timg" jdbcType="VARCHAR" property="timg" />
     <result column="brief" jdbcType="LONGVARCHAR" property="brief" />
   </resultMap>
+
 </mapper>

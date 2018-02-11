@@ -1,6 +1,9 @@
 package com.company.project.model;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 
 @Table(name = "pz_node")
 public class Node {
@@ -10,6 +13,7 @@ public class Node {
 
     private Integer pid;
 
+    @NotBlank(message = "节点名称不能为空")
     private String name;
 
     private String nodepath;
@@ -31,6 +35,7 @@ public class Node {
      */
     private String seodes;
 
+    @Max(value = 10, message = "不能大于10")
     private Integer ishide;
 
     private Short mgwidth;

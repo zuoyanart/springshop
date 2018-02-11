@@ -6,9 +6,14 @@ import com.company.project.model.Node;
 import com.company.project.service.NodeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import java.util.List;
 
 /**
@@ -16,6 +21,7 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/node")
+@Validated
 public class NodeController {
     @Resource
     private NodeService nodeService;
@@ -51,4 +57,16 @@ public class NodeController {
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
+
+    @PutMapping("/ishide")
+    public Result changeHide(@Min(value=5, message="id必须大于5") @RequestParam(defaultValue = "0") Integer id, @RequestParam(defaultValue = "0") Integer ishide) {
+        try {
+            nodeService.changeHide(id, ishide);
+            return ResultGenerator.genSuccessResult();
+        } catch (Exception e) {
+            return ResultGenerator.genFailResult(e.getMessage());
+        }
+    }
+
+
 }
