@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.ArticleMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Article">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="timg" jdbcType="VARCHAR" property="timg" />
+    <result column="brief" jdbcType="VARCHAR" property="brief" />
+    <result column="nodeid" jdbcType="INTEGER" property="nodeid" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="reco" jdbcType="INTEGER" property="reco" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="pass" jdbcType="INTEGER" property="pass" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="tags" jdbcType="VARCHAR" property="tags" />
+    <result column="link" jdbcType="VARCHAR" property="link" />
+    <result column="comment" jdbcType="INTEGER" property="comment" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="createtime" jdbcType="INTEGER" property="createtime" />
+    <result column="mooncount" jdbcType="TINYINT" property="mooncount" />
+    <result column="lastclicktime" jdbcType="INTEGER" property="lastclicktime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+</mapper>
