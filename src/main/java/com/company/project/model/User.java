@@ -2,12 +2,13 @@ package com.company.project.model;
 
 import javax.persistence.*;
 
+@Table(name = "pz_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
+    private String userName;
 
     private String password;
 
@@ -32,15 +33,15 @@ public class User {
     /**
      * @return name
      */
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
     /**
      * @param name
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String name) {
+        this.userName = name;
     }
 
     /**

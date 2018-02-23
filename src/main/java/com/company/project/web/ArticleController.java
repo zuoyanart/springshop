@@ -9,7 +9,9 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
 * Created by CodeGenerator on 2018/02/16.
@@ -45,9 +47,13 @@ public class ArticleController {
     }
 
     @GetMapping
-    public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
+    public Result list(@RequestParam Integer nodeid, @RequestParam String kw, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
+        Map<String, Object> queryMap = new HashMap<String, Object>();
+        queryMap.put("nodeid", nodeid);
+        queryMap.put("kw", kw);
+
         PageHelper.startPage(page, size);
-        List<Article> list = articleService.findAll();
+        List<Article> list = articleService.page(queryMap);
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }

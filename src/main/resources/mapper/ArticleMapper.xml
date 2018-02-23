@@ -23,5 +23,25 @@
     <result column="mooncount" jdbcType="TINYINT" property="mooncount" />
     <result column="lastclicktime" jdbcType="INTEGER" property="lastclicktime" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <collection property="node"  ofType="Node">
+      <id property="id" column="id" javaType="int" jdbcType="INTEGER"/>
+      <result property="name" column="name" javaType="string" jdbcType="VARCHAR"/>
+      <result property="nodepath" column="nodepath" javaType="string" jdbcType="VARCHAR"/>
+    </collection>
   </resultMap>
+
+  <select id="page" resultMap="BaseResultMap" parameterType="hashmap">
+    select a.*,b.id nodeid,b.name,b.nodepath from pz_article a
+    LEFT JOIN   pz_node b
+    ON
+    a.nodeid = b.id
+    WHERE
+    b.nodepath LIKE '%,${nodeid},%'
+    AND
+    a.title LIKE  '%${kw}%'
+    ORDER BY
+    a.id desc
+  </select>
+
+
 </mapper>

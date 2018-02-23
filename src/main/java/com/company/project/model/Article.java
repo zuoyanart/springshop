@@ -36,6 +36,9 @@ public class Article {
 
     private Integer createtime;
 
+    @Transient
+    private Node node;
+
     /**
      * 本月点击
      */
@@ -306,5 +309,13 @@ public class Article {
      */
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Node getNode() {
+        return node;
+    }
+
+    public  void setNode(Node node) {
+        this.node = node;
     }
 }

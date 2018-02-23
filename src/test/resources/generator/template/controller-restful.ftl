@@ -23,7 +23,7 @@ public class ${modelNameUpperCamel}Controller {
     @PostMapping
     public Result add(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.save(${modelNameLowerCamel});
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.genSuccessResult(${modelNameLowerCamel}.getId());
     }
 
     @DeleteMapping("/{id}")
